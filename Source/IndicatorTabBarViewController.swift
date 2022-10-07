@@ -8,7 +8,7 @@
 
 import UIKit
 
-class IndicatorTabBarController: UITabBarController {    
+class IndicatorTabBarViewController: UITabBarController {    
     private var tabbarIndicatorContainer: UIView?
     private var tabbarIndicatorSubviews: [UIView]?
     
@@ -46,6 +46,14 @@ class IndicatorTabBarController: UITabBarController {
         moveTabbarIndicator(at: selectedIndex)
     }
     
+    private func createTabbarIndicatorContainer() -> UIView {
+        let frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: indicatorHeight)
+        let indicatorContainerView = UIView(frame: frame)
+        indicatorContainerView.backgroundColor = .white
+        indicatorContainerView.translatesAutoresizingMaskIntoConstraints = false
+        return indicatorContainerView
+    }
+    
     private func createIndicatorSubViews() -> [UIView] {
         guard let count = tabBar.items?.count else { return [] }
         var subViews: [UIView] = []
@@ -59,14 +67,6 @@ class IndicatorTabBarController: UITabBarController {
             subViews.append(view)
         }
         return subViews
-    }
-    
-    private func createTabbarIndicatorContainer() -> UIView {
-        let frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: indicatorHeight)
-        let indicatorContainerView = UIView(frame: frame)
-        indicatorContainerView.backgroundColor = .white
-        indicatorContainerView.translatesAutoresizingMaskIntoConstraints = false
-        return indicatorContainerView
     }
     
     private func setupTabbarSubviews() {
@@ -98,9 +98,13 @@ class IndicatorTabBarController: UITabBarController {
             }
         }
     }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
 }
 
-extension IndicatorTabBarController: UITabBarControllerDelegate {
+extension IndicatorTabBarViewController: UITabBarControllerDelegate {
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         guard let index = tabBar.items?.firstIndex(of: item) else { return }
         moveTabbarIndicator(at: index)

@@ -26,7 +26,7 @@ private enum TabBarOptions: Int {
     }
 }
 
-class EnrolledTabBarViewController: IndicatorTabBarController, InterfaceOrientationOverriding, ChromeCastConnectedButtonDelegate {
+class EnrolledTabBarViewController: IndicatorTabBarViewController, InterfaceOrientationOverriding, ChromeCastConnectedButtonDelegate {
     
     typealias Environment = OEXAnalyticsProvider & OEXConfigProvider & DataManagerProvider & NetworkManagerProvider & OEXRouterProvider & OEXInterfaceProvider & ReachabilityProvider & OEXSessionProvider & OEXStylesProvider & ServerConfigProvider
     
