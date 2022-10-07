@@ -26,12 +26,12 @@ private enum TabBarOptions: Int {
     }
 }
 
-class EnrolledTabBarViewController: UITabBarController, UITabBarControllerDelegate, InterfaceOrientationOverriding, ChromeCastConnectedButtonDelegate {
+class EnrolledTabBarViewController: TabbarController, InterfaceOrientationOverriding, ChromeCastConnectedButtonDelegate {
     
     typealias Environment = OEXAnalyticsProvider & OEXConfigProvider & DataManagerProvider & NetworkManagerProvider & OEXRouterProvider & OEXInterfaceProvider & ReachabilityProvider & OEXSessionProvider & OEXStylesProvider & ServerConfigProvider
     
-    fileprivate let environment: Environment
-    private var tabBarItems : [TabBarItem] = []
+    private let environment: Environment
+    private var tabBarItems: [TabBarItem] = []
     
     // add the additional resources options like 'debug'(special developer option) in additionalTabBarItems
     private var additionalTabBarItems : [TabBarItem] = []
@@ -40,7 +40,7 @@ class EnrolledTabBarViewController: UITabBarController, UITabBarControllerDelega
     static var courseCatalogIndex: Int = 0
     
     private var screenTitle: String {
-        guard let option = TabBarOptions.options.first else {return Strings.courses}
+        guard let option = TabBarOptions.options.first else { return Strings.courses }
         return option.title(config: environment.config)
     }
     
@@ -63,6 +63,7 @@ class EnrolledTabBarViewController: UITabBarController, UITabBarControllerDelega
         view.accessibilityIdentifier = "EnrolledTabBarViewController:view"
         selectedIndex = 1
         title = ""
+        showTabbarIndicator = true
     }
     
     override func didReceiveMemoryWarning() {
@@ -163,7 +164,7 @@ class EnrolledTabBarViewController: UITabBarController, UITabBarControllerDelega
 }
 
 extension EnrolledTabBarViewController {
-    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController){
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         navigationItem.title = viewController.navigationItem.title
         if TabBarOptions.options[tabBarController.selectedIndex] == .CourseCatalog {
             environment.analytics.trackUserFindsCourses()

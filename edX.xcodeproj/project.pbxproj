@@ -225,6 +225,7 @@
 		5FC5AE112847944E007E5917 /* LearnContainerHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC5AE102847944E007E5917 /* LearnContainerHeaderView.swift */; };
 		5FD868362637F05E0045A149 /* CourseDatesHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD868352637F05E0045A149 /* CourseDatesHeaderView.swift */; };
 		5FD868382637F0FC0045A149 /* CalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD868372637F0FC0045A149 /* CalendarManager.swift */; };
+		5FDF9FEA28EED23600BE7A6A /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDF9FE928EED23600BE7A6A /* TabbarController.swift */; };
 		5FF08645257F91FA0078877A /* ValuePropComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF08644257F91FA0078877A /* ValuePropComponentView.swift */; };
 		5FFB73BC2849F10D000523BF /* DPDKeyboardListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFB73B32849F10D000523BF /* DPDKeyboardListener.swift */; };
 		5FFB73BD2849F10D000523BF /* DPDConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFB73B42849F10D000523BF /* DPDConstants.swift */; };
@@ -1235,6 +1236,7 @@
 		5FC5AE102847944E007E5917 /* LearnContainerHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnContainerHeaderView.swift; sourceTree = "<group>"; };
 		5FD868352637F05E0045A149 /* CourseDatesHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDatesHeaderView.swift; sourceTree = "<group>"; };
 		5FD868372637F0FC0045A149 /* CalendarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarManager.swift; sourceTree = "<group>"; };
+		5FDF9FE928EED23600BE7A6A /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
 		5FF08644257F91FA0078877A /* ValuePropComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValuePropComponentView.swift; sourceTree = "<group>"; };
 		5FFB73B32849F10D000523BF /* DPDKeyboardListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPDKeyboardListener.swift; sourceTree = "<group>"; };
 		5FFB73B42849F10D000523BF /* DPDConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPDConstants.swift; sourceTree = "<group>"; };
@@ -4072,6 +4074,7 @@
 				E0B58CDB2818F7DD0047D78F /* EnrolledCoursesViewController+CourseUpgrade.swift */,
 				5FC5AE102847944E007E5917 /* LearnContainerHeaderView.swift */,
 				5FFCF2C6284CA12600D6456F /* LearnContainerViewController.swift */,
+				5FDF9FE928EED23600BE7A6A /* TabbarController.swift */,
 			);
 			name = "Front Rear views";
 			sourceTree = "<group>";
@@ -4972,6 +4975,7 @@
 				E02F65681E8B94CC000D1C4E /* TZSpacerView.swift in Sources */,
 				223CE58F25BEEACC0081C30F /* UIImage+GIF.swift in Sources */,
 				5DD0FFCF1B1D225C00837121 /* DiscussionNewPostViewController.swift in Sources */,
+				5FDF9FEA28EED23600BE7A6A /* TabbarController.swift in Sources */,
 				5FFB73BC2849F10D000523BF /* DPDKeyboardListener.swift in Sources */,
 				B4B285DF1A9A493A00DD603A /* OEXNewRelicConfig.m in Sources */,
 				9E1D952E1B678E4700ABE764 /* AccessibilityCLButton.swift in Sources */,
