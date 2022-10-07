@@ -26,7 +26,7 @@ private enum TabBarOptions: Int {
     }
 }
 
-class EnrolledTabBarViewController: TabbarController, InterfaceOrientationOverriding, ChromeCastConnectedButtonDelegate {
+class EnrolledTabBarViewController: IndicatorTabBarController, InterfaceOrientationOverriding, ChromeCastConnectedButtonDelegate {
     
     typealias Environment = OEXAnalyticsProvider & OEXConfigProvider & DataManagerProvider & NetworkManagerProvider & OEXRouterProvider & OEXInterfaceProvider & ReachabilityProvider & OEXSessionProvider & OEXStylesProvider & ServerConfigProvider
     
@@ -63,7 +63,6 @@ class EnrolledTabBarViewController: TabbarController, InterfaceOrientationOverri
         view.accessibilityIdentifier = "EnrolledTabBarViewController:view"
         selectedIndex = 1
         title = ""
-        showTabbarIndicator = true
     }
     
     override func didReceiveMemoryWarning() {

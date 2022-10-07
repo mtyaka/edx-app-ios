@@ -1,5 +1,5 @@
 //
-//  TabbarController.swift
+//  IndicatorTabBarController.swift
 //  edX
 //
 //  Created by MuhammadUmer on 06/10/2022.
@@ -8,9 +8,7 @@
 
 import UIKit
 
-class TabbarController: UITabBarController {
-    var showTabbarIndicator = false
-    
+class IndicatorTabBarController: UITabBarController {    
     private var tabbarIndicatorContainer: UIView?
     private var tabbarIndicatorSubviews: [UIView]?
     
@@ -27,8 +25,8 @@ class TabbarController: UITabBarController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        addObserver()
         setupTabbarIndicatorView()
+        addObserver()
     }
     
     private func addObserver() {
@@ -38,7 +36,6 @@ class TabbarController: UITabBarController {
     }
     
     private func setupTabbarIndicatorView() {
-        guard showTabbarIndicator == true else { return }
         tabbarIndicatorContainer?.snp.removeConstraints()
         tabbarIndicatorContainer = nil
         tabbarIndicatorSubviews?.forEach { $0.removeFromSuperview() }
@@ -103,7 +100,7 @@ class TabbarController: UITabBarController {
     }
 }
 
-extension TabbarController: UITabBarControllerDelegate {
+extension IndicatorTabBarController: UITabBarControllerDelegate {
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         guard let index = tabBar.items?.firstIndex(of: item) else { return }
         moveTabbarIndicator(at: index)
